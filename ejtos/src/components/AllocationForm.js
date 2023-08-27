@@ -68,7 +68,7 @@ const AllocationForm = () => {
                         id='cost'
                         value={cost}
                         style={{ marginLeft: '2rem', size: 10 }}
-                        max={remaining}
+                        max="20000"
                         onChange={(event) => setCost(event.target.value)}>
                     </input>
 

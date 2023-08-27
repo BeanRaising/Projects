@@ -69,10 +69,10 @@ export const AppReducer = (state, action) => {
                     ...state
                 }
             }
-            if (action.payload > state.budgetMax) {
-                alert("Budget may not exceed maximum: " + state.budgetMax);
+            if (action.payload > 20000) {
+                alert("Budget may not exceed maximum: $20,000");
                 return {
-                    ...state, budget: state.budgetMax
+                    ...state, budget: 20000
                 }
             }
                 return { ...state, budget: action.payload };
@@ -85,7 +85,6 @@ export const AppReducer = (state, action) => {
 // 1. Sets the initial state when the app loads
 const initialState = {
     budget: 2000,
-    budgetMax: 20000,
     expenses: [
         { id: "Marketing", name: 'Marketing', cost: 50 },
         { id: "Finance", name: 'Finance', cost: 300 },
@@ -113,7 +112,7 @@ export const AppProvider = (props) => {
         });
         remaining = state.budget - totalExpenses;
     }
-
+    alert('rendered 2');
     return (
         <AppContext.Provider
             value={{

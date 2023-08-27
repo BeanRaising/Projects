@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { AppContext } from "../context/AppContext";
 
 const Budget = (props) => {
-    const { budget, budgetMax, dispatch, currency } = useContext(AppContext);
+    const { budget, dispatch, currency } = useContext(AppContext);
     const [inputValue, setInputValue] = useState(budget);
 
     let typingTimeout = null;
@@ -33,7 +33,7 @@ const Budget = (props) => {
                     id='budget'
                     value={inputValue}
                     style={{ marginLeft: '0rem', Size: '10px' }}
-                    max={budgetMax}
+                    max="20000"
                     step="10"
                     onChange={handleInputChange}
                     onKeyUp={handleInputDone}
